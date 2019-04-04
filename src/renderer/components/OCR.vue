@@ -87,7 +87,9 @@ export default {
   },
   methods: {
     ocr: function (event) {
-      Tesseract.recognize(event.path)
+      Tesseract.recognize(event.path, {
+        lang: 'chi_sim'
+      })
         .progress((status) => {
           this.status = status
         })
